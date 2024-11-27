@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <title>Cardápio</title>
+</head>
+<body>
+
+    <!--Cabeçalho-->
+    <div id="header">
+        <img src="./img/logo.png" width="300" height="150" alt="Logo" class="Logo">
+    </div>
+
+<!-- Section da comida-->
+<section id="comida">
+
+    <!--Subcabeçalho-->
+    <div class="subcabecalho">
+        <br>
+        Cardápio
+    </div>
+
+    <!-- Filtro de comida -->
+    <div class="filter-container">
+        <input type="text" id="filter-input" placeholder="Filtrar itens do cardápio..." oninput="filterItems()">
+    </div>
+
+    <!--Botão volta ao topo-->
+    <section></section>
+    <a href="#" class="btn"></a>
+
+
+    <div class="ul">
+        <ul>
+            <li><a href="#comida">Comidas |</a></li>
+            <li><a href="#chopes">Chopes |</a></li>
+            <li><a href="#bebidas">Bebidas</a></li>
+        </ul>
+    </div>
+
+    <br>
+
+        <!-- Comida 1 -->
+        <div class="h2"><strong>Comidas</strong></div>
+        <div class="flex-container">
+
+            <!--item1-->
+            <div class="item1">
+                <img src="./img/costela.png" width="75%" alt="costela">
+                <p>Costela defumada com lenha frutífera + Batata Frita</p>
+                <p>R$69,99</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product1', -1)">-</button>
+                    <span id="product1-quantity">0</span>
+                    <button onclick="updateQuantity('product1', 1)">+</button>
+                </div>
+            </div>
+
+
+            <!--item2-->
+            <div class="item2">
+                <img src="./img/peito.png" width="75%" alt="peito bovino">
+                <p>Peito bovino defumado em lenha frutífera + Batata Frita</p>
+                <p>R$50,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product2', -1)">-</button>
+                    <span id="product2-quantity">0</span>
+                    <button onclick="updateQuantity('product2', 1)">+</button>
+                </div>
+            </div>   
+
+        </div>
+
+
+        <!--comida 2-->
+        <div class="flex-container">
+
+            <!--item1-->
+            <div class="item1">
+                <img src="./img/torresmo.png" width="75%" alt="Torresmo">
+                <p>Torresmo defumado em lenha frutifera e frito</p>
+                <p>R$21,99</p>
+    
+<!-- Section de chopes-->
+<section id="chopes">
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product3', -1)">-</button>
+                    <span id="product3-quantity">0</span>
+                    <button onclick="updateQuantity('product3', 1)">+</button>
+                </div>
+
+            </div>
+    
+            
+            <!--item2-->
+            <div class="item2">
+                <img src="./img/pasteis.png" width="75%" alt="peito bovino">
+                <p>22 unidades de Mini Pastéis misto</p>
+                <p>R$25,99</p>
+                
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product4', -1)">-</button>
+                    <span id="product4-quantity">0</span>
+                    <button onclick="updateQuantity('product4', 1)">+</button>
+                </div>
+        
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+
+        <!-- Chope 1 -->
+        <div class="h2"><strong>Chopes</strong></div>
+        <div class="flex-container">
+
+            <!--item1-->
+            <div class="item1">
+                <img src="./img/chopp1.png" width="75%" alt="Chope Session IPA Imperatriz">
+                <p>Chope Session IPA Imperatriz 1 Litro</p>
+                <p>R$22,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product5', -1)">-</button>
+                    <span id="product5-quantity">0</span>
+                    <button onclick="updateQuantity('product5', 1)">+</button>
+                </div>
+
+            </div>
+    
+    
+            <!--item2-->
+            <div class="item2">
+                <img src="./img/chopp2.png" width="75%" alt="Chope Sir IPA Wayne 190 1 Litro">
+                <p>Chope Sir IPA Wayne 190 1 Litro</p>
+                <p>R$42,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product6', -1)">-</button>
+                    <span id="product6-quantity">0</span>
+                    <button onclick="updateQuantity('product6', 1)">+</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--chopes 2-->
+        <div class="flex-container">
+    
+            <!--item1-->
+            <div class="item1">
+                <img src="./img/chopp3.png" width="75%" alt="Catharina Sour de Frutas Vermelhas Hoffen bier">
+                <p>Catharina Sour de Frutas Vermelhas Hoffen bier 1 Litro</p>
+                <p>R$22,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product7', -1)">-</button>
+                    <span id="product7-quantity">0</span>
+                    <button onclick="updateQuantity('product7', 1)">+</button>
+                </div>
+        
+            </div>
+
+            <!--item2-->
+            <div class="item2">
+                <img src="./img/chopp4.png" width="75%" alt="peito bovino">
+                <p>Chope De Vinho Imperatriz 2 Litros</p>
+                <p>R$50,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product8', -1)">-</button>
+                    <span id="product8-quantity">0</span>
+                    <button onclick="updateQuantity('product8', 1)">+</button>
+                </div>
+
+<!-- Sectin de bebidas -->
+<section id="bebidas">
+
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+
+        <!--bebidas 1-->
+        <div class="h2"><strong>Bebidas</strong></div>
+        <div class="flex-container">
+    
+            <!--item1-->
+            <div class="item1">
+                <img src="./img/refri.png" width="75%" alt="Refrigerante">
+                <p>Refrigerante Lata</p>
+                <p>R$7,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product9', -1)">-</button>
+                    <span id="product9-quantity">0</span>
+                    <button onclick="updateQuantity('product9', 1)">+</button>
+                </div>
+        
+            </div>
+        
+            <!--item2-->
+            <div class="item2">
+                <img src="./img/caipirinha.png" width="75%" alt="Caipirinha">
+                <p>Caipirinha</p>
+                <p>R$20,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product10', -1)">-</button>
+                    <span id="product10-quantity">0</span>
+                    <button onclick="updateQuantity('product10', 1)">+</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--bebidas 2-->
+        <div class="flex-container">
+    
+            <!--item1-->
+            <div class="item1">
+                <img src="./img/suco.png" width="75%" alt="Suco">
+                <p>Suco Del Valle Lata</p>
+                <p>R$7,00</p>
+        
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product11', -1)">-</button>
+                    <span id="product11-quantity">0</span>
+                    <button onclick="updateQuantity('product11', 1)">+</button>
+                </div>
+
+            </div>
+        
+            <!--item2-->
+            <div class="item2">
+                <img src="./img/gin.png" width="75%" alt="Gin">
+                <p>Taça de Gin</p>
+                <p>R$25,00</p>
+
+                <!--botão -+ -->
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('product12', -1)">-</button>
+                    <span id="product12-quantity">0</span>
+                    <button onclick="updateQuantity('product12', 1)">+</button>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+
+        <div class="divbotao">
+            <!-- Botão para calcular total -->
+            <button onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+        <br>
+        <br>
+    </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <!--Rodapé-->
+    <div class="footer">
+        <div class="footer-container">
+
+        <!--Menu-->
+        <div class="icones">
+        <div class="dropup">
+            <button class="dropbtn"><img src="./img/Menu.png" width="40" height="40" alt="Menu"></button>
+                <div class="dropup-content">
+                    <a href="index.html">Início</a>
+                    <a href="cardapio.html">Cardápio</a>
+                    <a href="localizacaoecontato.html">Localização e Contato</a>
+                    <a href="eventos.html">Eventos</a>
+                    <a href="promocoes.html">Promoções</a>
+                    <a href="sobre.html">Sobre a Nics</a>
+                    <a href="feedbackeredes.html">Feedback e Redes Sociais</a>
+                </div>
+        </div>
+            <a href="sacola.html"><img src="./img/Sacola.png" width="40" height="40" alt="Sacola"></a>
+            <a href="login.html"><img src="./img/Perfil2.png" width="55" height="55" alt="Perfil2"></a>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        // Preços dos produtos
+        const prices = { product1: 69.99, product2: 50.00, product3: 21.99, product4: 25.99, product5: 22.00, product6: 42.00, product7: 22.00, product8: 50.00, product9: 7.00, product10: 20.00, product11: 7.00, product10: 25.00 };
+    
+        // Armazena as quantidades
+        const quantities = { product1: 0, product2: 0, product3: 0, product4: 0, product5: 0, product6: 0, product7: 0, product8: 0, product9: 0, product10: 0, product11: 0, product12: 0  };
+    
+        // Função para atualizar a quantidade
+        function updateQuantity(product, change) {
+          quantities[product] = Math.max(0, quantities[product] + change); // Impede números negativos
+          document.getElementById(`${product}-quantity`).textContent = quantities[product];
+        }
+    
+        // Função para adicionar produtos ao carrinho
+        function addToCart() {
+          const cartItems = document.getElementById('cartItems');
+          const totalPriceElement = document.getElementById('totalPrice');
+          cartItems.innerHTML = ''; // Limpa o carrinho
+    
+          let total = 0;
+    
+          // Percorre os produtos para calcular e exibir no carrinho
+          for (let key in prices) {
+            const quantity = quantities[key];
+            if (quantity > 0) {
+              const subtotal = prices[key] * quantity;
+              total += subtotal;
+              const li = document.createElement('li');
+              li.textContent = `${key.replace('product', 'Produto ')}: ${quantity} x R$${prices[key]} = R$${subtotal.toFixed(2)}`;
+              cartItems.appendChild(li);
+            }
+          }
+    
+          // Atualiza o total
+          totalPriceElement.textContent = `Total: R$${total.toFixed(2)}`;
+        }
+    
+        // Função para enviar o pedido ao WhatsApp
+        function sendToWhatsApp() {
+          const phoneNumber = "5515981633897"; // Substitua pelo número de telefone desejado
+          let message = "*Resumo do Pedido:*\n\n";
+          let total = 0;
+    
+          for (let key in prices) {
+            const quantity = quantities[key];
+            if (quantity > 0) {
+              const subtotal = prices[key] * quantity;
+              total += subtotal;
+              message += `• ${key.replace('product', 'Produto ')}: ${quantity} x R$${prices[key]} = R$${subtotal.toFixed(2)}\n`;
+            }
+          }
+    
+          message += `\n*Total: R$${total.toFixed(2)}*`;
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+          window.open(whatsappURL, "_blank");
+        }
+      </script>
+
+</body>
+</html>

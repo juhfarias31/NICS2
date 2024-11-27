@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+// Função para carregar o JSON e exibir os dados
+async function carregarDados() {
+    try {
+        // Faz a requisição do arquivo JSON
+        const response = await fetch('produtos.json');
+        
+        // Verifica se a requisição foi bem-sucedida
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar os dados: ${response.statusText}`);
+        }
+
+        // Converte a resposta em JSON
+        const dados = await response.json();
+
+        // Exibe os dados na tabela
+        exibirDadosNaTabela(dados);
+    } catch (error) {
+        console.error(error);
+        alert('Não foi possível carregar os dados.');
+    }
+}
+
+// Função para exibir os dados na tabela
+function exibirDadosNaTabela(dados) {
+    const tabela = document.getElementById('tabelaProdutos').querySelector('tbody');
+
+    // Limpa o conteúdo anterior da tabela
+    tabela.innerHTML = '';
+
+    // Variável para calcular o total geral
+    let totalGeral = 0;
+
+    // Itera pelos produtos e cria as linhas na tabela
+    dados.forEach(produto => {
+        const linha = document.createElement('tr');
+
+        const colunaNome = document.createElement('td');
+        colunaNome.textContent = produto.nome;
+        linha.appendChild(colunaNome);
+
+        const colunaPreco = document.createElement('td');
+        colunaPreco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+        linha.appendChild(colunaPreco);
+
+        const colunaQuantidade = document.createElement('td');
+        colunaQuantidade.textContent = produto.quantidade;
+        linha.appendChild(colunaQuantidade);
+
+        tabela.appendChild(linha);
+
+        // Calcula o total do produto e adiciona ao total geral
+        totalGeral += produto.preco * produto.quantidade;
+    });
+
+    // Adiciona uma linha com o total geral ao final da tabela
+    const linhaTotal = document.createElement('tr');
+
+    const colunaLabel = document.createElement('td');
+    colunaLabel.textContent = 'Total Geral';
+    colunaLabel.colSpan = 2; // Combina as duas primeiras colunas
+    colunaLabel.style.fontWeight = 'bold';
+    linhaTotal.appendChild(colunaLabel);
+
+    const colunaTotal = document.createElement('td');
+    colunaTotal.textContent = `R$ ${totalGeral.toFixed(2)}`;
+    colunaTotal.style.fontWeight = 'bold';
+    linhaTotal.appendChild(colunaTotal);
+
+    tabela.appendChild(linhaTotal);
+}
+
+// Carregar os dados ao carregar a página
+document.addEventListener('DOMContentLoaded', carregarDados);
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <table id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dados serão carregados dinamicamente -->
+        </tbody>
+    </table>
+
+</body>
+</html>

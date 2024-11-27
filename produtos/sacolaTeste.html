@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sacola.css">
+    <title>Nics Choperia</title>
+</head>
+
+<body>
+
+    <!--Cabeçalho-->
+    <div id="header">
+        <img src="./img/logo.png" width="300" height="150" alt="Logo" class="Logo">
+    </div> 
+
+    <!--Subcabeçalho-->
+    <div class="subcabecalho">
+      <br>
+      Sacola
+    </div>
+
+    <div class="card">
+        <h2>Resumo do Carrinho</h2>
+        <ul id="cartItems"></ul>
+        <p id="totalPrice">Total: R$0,00</p>
+        <button id="whatsappButton" onclick="sendToWhatsApp()">Enviar para WhatsApp</button>
+    </div>
+
+    <!--Rodapé-->
+    <div class="footer">
+        <div class="footer-container">
+
+            <!--Menu-->
+            <div class="icones">
+            <div class="dropup">
+                <button class="dropbtn"><img src="./img/Menu.png" width="40" height="40" alt="Menu"></button>
+                <div class="dropup-content">
+                    <a href="index.html">Início</a>
+                    <a href="cardapio.html">Cardápio</a>
+                    <a href="localizacaoecontato.html">Localização e Contato</a>
+                    <a href="eventos.html">Eventos</a>
+                    <a href="promocoes.html">Promoções</a>
+                    <a href="sobre.html">Sobre a Nics</a>
+                    <a href="feedbackeredes.html">Feedback e Redes Sociais</a>
+                </div>
+            </div>
+                <a href="sacola.html"><img src="./img/Sacola.png" width="40" height="40" alt="Sacola"></a>
+                <a href="login.html"><img src="./img/Perfil2.png" width="55" height="55" alt="Perfil2"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Seleciona todos os botões de aumentar e diminuir a quantidade
+        const decreaseButtons = document.querySelectorAll('.quantity-control button:first-child');
+        const increaseButtons = document.querySelectorAll('.quantity-control button:last-child');
+        const quantities = document.querySelectorAll('.quantity-control span');
+    
+        // Função para atualizar a quantidade
+        function updateQuantity(index, change) {
+            let currentQuantity = parseInt(quantities[index].innerText);
+            currentQuantity += change;
+    
+            // Evita que a quantidade fique negativa
+            if (currentQuantity < 1) {
+                currentQuantity = 1;
+            }
+    
+            quantities[index].innerText = currentQuantity;
+        }
+    
+        // Adiciona eventos de clique para os botões de diminuir
+        decreaseButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                updateQuantity(index, -1);
+            });
+        });
+    
+        // Adiciona eventos de clique para os botões de aumentar
+        increaseButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                updateQuantity(index, 1);
+            });
+        });
+    
+        // Evento para o botão "Confirmar Pedido"
+        const confirmarPedidoButton = document.querySelector('.confirmar-pedido');
+        confirmarPedidoButton.addEventListener('click', () => {
+            alert('Pedido confirmado! Obrigado pela sua compra!');
+        });
+    
+        // Evento para o botão "Alterar Dados"
+        const alterarDadosButton = document.querySelector('.alterar-dados');
+        alterarDadosButton.addEventListener('click', () => {
+            alert('Você pode alterar seus dados na seção de configurações.');
+        });
+    </script>
+
+    
+    <script>
+        // Script para mostrar a opção de pagamento selecionada
+        const paymentMethodSelect = document.getElementById('payment-method');
+        const pixPayment = document.getElementById('pix-payment');
+        const dinheiroPayment = document.getElementById('dinheiro-payment');
+        const cartaoPayment = document.getElementById('cartao-payment');
+
+        paymentMethodSelect.addEventListener('change', function() {
+            const selectedPayment = this.value;
+
+            // Esconde todas as opções de pagamento
+            pixPayment.style.display = 'none';
+            dinheiroPayment.style.display = 'none';
+            cartaoPayment.style.display = 'none';
+
+            // Exibe a opção selecionada
+            if (selectedPayment === 'pix') {
+                pixPayment.style.display = 'block';
+            } else if (selectedPayment === 'dinheiro') {
+                dinheiroPayment.style.display = 'block';
+            } else if (selectedPayment === 'cartao') {
+                cartaoPayment.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

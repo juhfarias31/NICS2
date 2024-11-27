@@ -1,0 +1,50 @@
+[
+    {
+        "nome": "Costela defumada com lenha frutífera + Batata Frita",
+        "preco": 69.99
+    },
+    {
+        "nome": "Peito bovino defumado em lenha frutífera + Batata Frita",
+        "preco": 50.00
+    },
+    {
+        "nome": "Torresmo defumado em lenha frutifera e frito",
+        "preco": 21.99
+    },
+    {
+        "nome": "22 unidades de Mini Pastéis misto",
+        "preco": 25.99
+    },
+    {
+        "nome": "Chope Session IPA Imperatriz 1 Litro",
+        "preco": 22.00
+    },
+    {
+        "nome": "Chope Sir IPA Wayne 190 1 Litro",
+        "preco": 42.00
+    },
+    {
+        "nome": "Catharina Sour de Frutas Vermelhas Hoffen bier 1 Litro",
+        "preco": 22.00
+    },
+    {
+        "nome": "Chope De Vinho Imperatriz 2 Litros",
+        "preco": 50.00
+    },
+    {
+        "nome": "Refrigerante Lata",
+        "preco": 7.00
+    },
+    {
+        "nome": "Caipirinha",
+        "preco": 20.00
+    },
+    {
+        "nome": "Suco Del Valle Lata",
+        "preco": 7.00
+    },
+    {
+        "nome": "Taça de Gin",
+        "preco": 25.00
+    }
+]
